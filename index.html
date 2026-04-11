@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hat Core | Seguridad y Salud en el Trabajo Consciente y Creativa</title>
+  <meta name="description" content="Innovamos en la gestión de SST con metodologías dinámicas que conectan con las personas. Seguridad laboral que deja huella." />
+  <meta name="keywords" content="Seguridad y Salud en el Trabajo, SST, Hat Core, gestión de seguridad, metodologías dinámicas, cultura preventiva, SGSST" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Hat Core" />
+  <meta property="og:title" content="Hat Core | Seguridad y Salud en el Trabajo Consciente y Creativa" />
+  <meta property="og:description" content="Innovamos en la gestión de SST con metodologías dinámicas que conectan con las personas. Seguridad laboral que deja huella." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_CO" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hat-purple':   '#6B21A8',
+            'hat-violet':   '#7C3AED',
+            'hat-cyan':     '#06B6D4',
+            'hat-navy':     '#1E1B4B',
+            'hat-lavender': '#A78BFA',
+            'hat-lime':     '#A3E635',
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    :root {
+      --purple: #6B21A8;
+      --violet: #7C3AED;
+      --cyan:   #06B6D4;
+      --navy:   #1E1B4B;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden; }
+
+    /* ── Gradient text ── */
+    .gt      { background: linear-gradient(135deg,#7C3AED 0%,#06B6D4 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .gt-warm { background: linear-gradient(135deg,#A78BFA 0%,#06B6D4 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+    /* ── Navbar ── */
+    #navbar { transition: background .4s ease, box-shadow .4s ease; }
+    #navbar.scrolled {
+      background: rgba(255,255,255,.90) !important;
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(0,0,0,.07);
+      box-shadow: 0 1px 32px rgba(0,0,0,.06);
+    }
+    #navbar.scrolled .nl-hat  { color: #1E1B4B; }
+    #navbar.scrolled .nl-core { color: #7C3AED; }
+    #navbar.scrolled .nl-sub  { color: #9CA3AF; }
+    #navbar.scrolled .nl-lnk  { color: #6B7280; }
+    #navbar.scrolled .nl-lnk:hover { color: #7C3AED; }
+    #navbar.scrolled #menuBtn { color: #4B5563; }
+    .nl-hat,.nl-core,.nl-sub,.nl-lnk,#menuBtn { transition: color .3s ease; }
+
+    /* ── HERO ── */
+    .hero-wrap { position:relative; height:100vh; min-height:620px; overflow:hidden; display:flex; }
+
+    /* Image: fills right portion, Ken Burns */
+    .hero-img-wrap {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .hero-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: right 18%;
+      transform-origin: center;
+      animation: kenBurns 22s ease-in-out infinite;
+    }
+    @keyframes kenBurns {
+      0%   { transform: scale(1.10) translateX(0)    translateY(0); }
+      25%  { transform: scale(1.06) translateX(-1%)  translateY(0.8%); }
+      75%  { transform: scale(1.07) translateX(1%)   translateY(-0.5%); }
+      100% { transform: scale(1.10) translateX(0)    translateY(0); }
+    }
+
+    /* Gradient mask: dark on left, fades to transparent right — person uncovered */
+    .hero-mask {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(30,27,75,.97)  0%,
+        rgba(107,33,168,.93) 28%,
+        rgba(107,33,168,.78) 48%,
+        rgba(60,20,120,.35)  68%,
+        rgba(30,27,75,.10)   100%
+      );
+    }
+    /* Extra bottom fade for mobile readability */
+    .hero-mask-bottom {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 35%;
+      background: linear-gradient(to top, rgba(30,27,75,.7), transparent);
+    }
+
+    /* Hero text lives in the left 60% on desktop */
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 1.5rem;
+    }
+    .hero-text-inner {
+      max-width: 640px;
+      width: 100%;
+      padding-top: 6rem;
+      padding-bottom: 4rem;
+    }
+    @media (min-width: 1024px) {
+      .hero-text-inner { max-width: 560px; }
+    }
+
+    /* Hero entrance animations */
+    @keyframes heroIn {
+      from { opacity:0; transform:translateY(28px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    .h-a  { animation: heroIn 1s cubic-bezier(.16,1,.3,1) forwards; }
+    .h-d1 { animation-delay:.10s; opacity:0; }
+    .h-d2 { animation-delay:.25s; opacity:0; }
+    .h-d3 { animation-delay:.42s; opacity:0; }
+    .h-d4 { animation-delay:.58s; opacity:0; }
+
+    /* Scroll indicator bounce */
+    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+    .scroll-ind { animation: bounce 2s ease-in-out infinite; }
+
+    /* ── Scroll-reveal ── */
+    .reveal        { opacity:0; transform:translateY(44px);  transition: opacity .85s cubic-bezier(.16,1,.3,1), transform .85s cubic-bezier(.16,1,.3,1); }
+    .reveal-left   { opacity:0; transform:translateX(-52px); transition: opacity .90s cubic-bezier(.16,1,.3,1), transform .90s cubic-bezier(.16,1,.3,1); }
+    .reveal-right  { opacity:0; transform:translateX(52px);  transition: opacity .90s cubic-bezier(.16,1,.3,1), transform .90s cubic-bezier(.16,1,.3,1); }
+    .reveal-scale  { opacity:0; transform:scale(.93);        transition: opacity .80s cubic-bezier(.16,1,.3,1), transform .80s cubic-bezier(.16,1,.3,1); }
+    .reveal.visible,.reveal-left.visible,.reveal-right.visible,.reveal-scale.visible { opacity:1; transform:none; }
+    .d1{transition-delay:.06s!important} .d2{transition-delay:.14s!important}
+    .d3{transition-delay:.22s!important} .d4{transition-delay:.30s!important}
+    .d5{transition-delay:.38s!important} .d6{transition-delay:.46s!important}
+
+    /* ── Card hover ── */
+    .card-up { transition: transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s ease; }
+    .card-up:hover { transform:translateY(-6px); box-shadow: 0 20px 44px rgba(124,58,237,.13); }
+
+    /* ── ANIMATED MEDIA (after brand statement) ── */
+    .media-wrap {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      max-height: 55vh;
+      overflow: hidden;
+      background: #0f0b2d;
+    }
+    @media (max-width: 768px) { .media-wrap { height: 340px; max-height: 50vh; } }
+
+    /* Animated gradient blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: .65;
+      animation: blobFloat 12s ease-in-out infinite alternate;
+    }
+    .blob-1 { width:55%; height:80%; background:radial-gradient(circle, #7C3AED, #6B21A8); top:-20%; left:-10%; animation-duration:14s; }
+    .blob-2 { width:45%; height:75%; background:radial-gradient(circle, #06B6D4, #0e7490); bottom:-25%; right:-5%;  animation-duration:18s; animation-delay:-4s; }
+    .blob-3 { width:35%; height:55%; background:radial-gradient(circle, #A78BFA, #7C3AED); top:10%;  right:20%;   animation-duration:16s; animation-delay:-8s; }
+
+    @keyframes blobFloat {
+      0%   { transform: translate(0,0)      scale(1); }
+      33%  { transform: translate(4%,6%)    scale(1.08); }
+      66%  { transform: translate(-5%,-3%)  scale(.93); }
+      100% { transform: translate(2%,-6%)   scale(1.04); }
+    }
+
+    /* Dot grid inside media */
+    .media-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,.12) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    /* Rotating ring */
+    .ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.07);
+      animation: ringPulse 6s ease-in-out infinite;
+    }
+    @keyframes ringPulse {
+      0%,100% { transform: scale(1); opacity:.4; }
+      50%      { transform: scale(1.04); opacity:.8; }
+    }
+
+    /* Media overlay content */
+    .media-content { position:relative; z-index:10; display:flex; align-items:center; justify-content:center; height:100%; text-align:center; padding:2rem; }
+
+    /* ─── VIDEO SUPPORT (swap in real video) ─── */
+    .media-video {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+    .media-video-overlay {
+      position: absolute; inset: 0; z-index:2;
+      background: linear-gradient(180deg, rgba(15,11,45,.55) 0%, rgba(107,33,168,.45) 100%);
+    }
+
+    /* ── STICKY FEAT (Propósito) ── */
+    .feat-section { display:flex; }
+    .feat-sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .feat-img {
+      position: absolute; inset:0;
+      width:100%; height:100%;
+      object-fit: cover;
+      transition: opacity .9s cubic-bezier(.16,1,.3,1);
+    }
+    .feat-img.active { opacity:1; }
+    .feat-img.inactive { opacity:0; }
+
+    .feat-img-overlay {
+      position: absolute; inset:0;
+      background: linear-gradient(to right, transparent 60%, rgba(255,255,255,.08) 100%);
+      z-index:2;
+    }
+
+    .feat-scroll-col { flex:1; background:white; }
+    .feat-pane {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 5rem 3.5rem;
+    }
+    @media (max-width: 1023px) {
+      .feat-section { flex-direction: column; }
+      .feat-sticky  { display: none; }
+      .feat-scroll-col { background: white; }
+      .feat-pane { min-height: auto; padding: 4rem 1.5rem; }
+    }
+
+    /* ── Fullbleed sections ── */
+    .fullbleed { position:relative; overflow:hidden; }
+    .fb-bg     { position:absolute; inset:0; background-size:cover; background-position:center; }
+    .fb-ov     { position:absolute; inset:0; }
+    .fb-cnt    { position:relative; z-index:10; }
+
+    /* ── Glass card ── */
+    .glass {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    /* ── Impact item ── */
+    .impact-item {
+      transition: background .3s ease, transform .3s ease;
+      cursor: default;
+    }
+    .impact-item:hover {
+      background: rgba(255,255,255,.09);
+      transform: translateY(-3px);
+    }
+
+    /* ── Nav underline ── */
+    .nl-lnk { position:relative; }
+    .nl-lnk::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:linear-gradient(90deg,#7C3AED,#06B6D4); transition:width .3s ease; }
+    .nl-lnk:hover::after { width:100%; }
+
+    /* ── Buttons ── */
+    .btn-p {
+      display:inline-flex; align-items:center; gap:.5rem;
+      padding:.9rem 2rem; border-radius:9999px;
+      font-weight:700; font-size:.9rem;
+      color:#1E1B4B; background:#06B6D4;
+      transition: background .25s, transform .2s, box-shadow .25s;
+      box-shadow: 0 8px 28px rgba(6,182,212,.38);
+    }
+    .btn-p:hover { background:#22D3EE; transform:translateY(-2px); box-shadow:0 14px 36px rgba(6,182,212,.48); }
+
+    .btn-s {
+      display:inline-flex; align-items:center; gap:.5rem;
+      padding:.9rem 2rem; border-radius:9999px;
+      font-weight:600; font-size:.9rem;
+      color:white; border:1.5px solid rgba(255,255,255,.30);
+      transition: background .25s, border-color .25s;
+    }
+    .btn-s:hover { background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.55); }
+
+    /* ── Form ── */
+    .hat-input {
+      width:100%; padding:.9rem 1.2rem;
+      border-radius:.75rem; border:1.5px solid #E5E7EB;
+      background:white; color:#111827; font-size:.875rem; font-family:inherit;
+      transition: border-color .25s, box-shadow .25s; outline:none;
+    }
+    .hat-input::placeholder { color:#D1D5DB; }
+    .hat-input:focus { border-color:#7C3AED; box-shadow: 0 0 0 3px rgba(124,58,237,.12); }
+
+    /* Dots helper */
+    .dots { display:grid; gap:8px; }
+    .dots span { width:5px; height:5px; border-radius:50%; display:block; }
+  </style>
+</head>
+
+<body class="font-sans bg-white text-gray-900 antialiased">
+
+  <!-- ══════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════ -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50" role="banner">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between" aria-label="Navegación principal">
+
+      <a href="#inicio" class="flex items-center gap-2" aria-label="Hat Core inicio">
+        <!-- Texto: visible sobre el hero oscuro (antes del scroll) -->
+        <div id="logoTexto" class="leading-tight">
+          <div>
+            <span class="nl-hat text-2xl font-black text-white tracking-tight">Hat</span><span class="nl-core text-2xl font-black text-hat-cyan tracking-tight">Core</span>
+          </div>
+          <p class="nl-sub text-[9px] text-white/45 font-medium uppercase tracking-widest">Unidad de Gestión y Seguridad para el Trabajo</p>
+        </div>
+        <!-- Logo imagen color: aparece al hacer scroll (navbar blanca) -->
+        <img id="logoColor"
+          src="logo-color.png"
+          alt="Hat Core — Unidad de Gestión y Seguridad para el Trabajo"
+          class="h-16 md:h-20 w-auto object-contain hidden"
+        />
+      </a>
+
+      <ul class="hidden md:flex items-center gap-8">
+        <li><a href="#proposito"   class="nl-lnk text-sm font-medium text-white/75 hover:text-white transition-colors">Propósito</a></li>
+        <li><a href="#metodologia" class="nl-lnk text-sm font-medium text-white/75 hover:text-white transition-colors">Metodología</a></li>
+        <li><a href="#proceso"     class="nl-lnk text-sm font-medium text-white/75 hover:text-white transition-colors">Proceso</a></li>
+        <li><a href="#impacto"     class="nl-lnk text-sm font-medium text-white/75 hover:text-white transition-colors">Impacto</a></li>
+        <li>
+          <a href="#contacto" class="px-5 py-2.5 rounded-full text-sm font-bold text-hat-navy bg-hat-cyan hover:bg-cyan-300 transition-colors shadow-lg shadow-cyan-500/30">
+            Inicia la Transformación
+          </a>
+        </li>
+      </ul>
+
+      <button id="menuBtn" class="md:hidden p-2 text-white" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+        <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+      </button>
+    </nav>
+
+    <div id="mobileMenu" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 px-6 pb-6 pt-4">
+      <ul class="flex flex-col gap-5">
+        <li><a href="#proposito"   class="text-sm font-medium text-gray-700 hover:text-hat-violet" onclick="closeMobileMenu()">Propósito</a></li>
+        <li><a href="#metodologia" class="text-sm font-medium text-gray-700 hover:text-hat-violet" onclick="closeMobileMenu()">Metodología</a></li>
+        <li><a href="#proceso"     class="text-sm font-medium text-gray-700 hover:text-hat-violet" onclick="closeMobileMenu()">Proceso</a></li>
+        <li><a href="#impacto"     class="text-sm font-medium text-gray-700 hover:text-hat-violet" onclick="closeMobileMenu()">Impacto</a></li>
+        <li>
+          <a href="#contacto" class="block w-full text-center px-5 py-3 rounded-full text-sm font-bold text-hat-navy bg-hat-cyan" onclick="closeMobileMenu()">
+            Inicia la Transformación
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ══════════════════════════════════════
+         HERO — texto izquierda, persona derecha libre
+    ══════════════════════════════════════ -->
+    <section id="inicio" class="hero-wrap" aria-label="Sección principal">
+
+      <!-- Imagen + Ken Burns -->
+      <div class="hero-img-wrap">
+        <img id="img-hero"
+          src="images/hero.jpg"
+          data-fallback="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=2400&q=85"
+          alt="Profesional enfocada con claridad y determinación"
+          fetchpriority="high"
+        />
+      </div>
+
+      <!-- Máscara de gradiente: oscuro izquierda → transparente derecha (persona visible) -->
+      <div class="hero-mask" aria-hidden="true"></div>
+      <div class="hero-mask-bottom" aria-hidden="true"></div>
+
+      <!-- Dots decorativos -->
+      <div class="absolute top-28 right-16 dots grid-cols-5 hidden xl:grid opacity-60" aria-hidden="true">
+        <span class="bg-hat-cyan"></span><span class="bg-hat-cyan"></span><span class="bg-hat-cyan"></span><span class="bg-hat-cyan"></span><span class="bg-hat-cyan"></span>
+        <span class="bg-hat-cyan/50"></span><span class="bg-hat-cyan/50"></span><span class="bg-hat-cyan/50"></span><span class="bg-hat-cyan/50"></span><span class="bg-hat-cyan/50"></span>
+        <span class="bg-white/20"></span><span class="bg-white/20"></span><span class="bg-white/20"></span><span class="bg-white/20"></span><span class="bg-white/20"></span>
+      </div>
+      <div class="absolute w-1 h-20 bg-hat-cyan rounded-full opacity-60 hidden xl:block" style="top:50%;right:3rem;transform:translateY(-50%)" aria-hidden="true"></div>
+
+      <!-- Contenido: alineado a la izquierda -->
+      <div class="hero-content">
+        <div class="hero-text-inner">
+
+          <p class="h-a h-d1 text-hat-cyan text-xs font-bold uppercase tracking-[.28em] mb-5">
+            Seguridad y Salud en el Trabajo
+          </p>
+
+          <h1 class="h-a h-d2 text-[clamp(2.6rem,6vw,5.2rem)] font-black text-white leading-[1.06] mb-7">
+            Una experiencia<br />
+            que <span class="text-hat-cyan">conecta</span><br />
+            y deja <span class="text-hat-lavender">huella.</span>
+          </h1>
+
+          <!-- TEXTO CUERPO: peso normal, alta opacidad, sombra de texto -->
+          <p class="h-a h-d3 text-base md:text-lg font-normal text-white/90 leading-relaxed mb-11"
+             style="text-shadow:0 1px 8px rgba(0,0,0,.45); max-width:480px;">
+            En <strong class="text-white font-semibold">Hat Core</strong> transformamos la SST
+            en aprendizajes memorables que generan cambios reales en el comportamiento diario.
+          </p>
+
+          <div class="h-a h-d4 flex flex-col sm:flex-row gap-4">
+            <a href="#contacto" class="btn-p">
+              <i class="fas fa-rocket" aria-hidden="true"></i>
+              Inicia la Transformación
+            </a>
+            <a href="#proposito" class="btn-s">
+              <i class="fas fa-arrow-down" aria-hidden="true"></i>
+              Conoce más
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-ind absolute bottom-9 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10" aria-hidden="true">
+        <span class="text-white/35 text-[10px] uppercase tracking-widest font-medium">Scroll</span>
+        <i class="fas fa-chevron-down text-white/35 text-sm"></i>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         BRAND STATEMENT
+    ══════════════════════════════════════ -->
+    <section class="py-24 md:py-36 bg-white text-center px-6" aria-label="Declaración de marca">
+      <div class="max-w-5xl mx-auto">
+        <p class="reveal text-xs font-bold uppercase tracking-[.28em] text-hat-violet mb-8">Hat Core</p>
+        <h2 class="reveal d1 text-3xl sm:text-4xl md:text-5xl lg:text-[3.6rem] font-black text-hat-navy leading-[1.1]">
+          Proteger a las personas<br />
+          no debe ser un proceso<br />
+          <span class="gt">impuesto ni complejo.</span>
+        </h2>
+        <div class="reveal d2 w-14 h-1 rounded-full bg-hat-cyan mx-auto mt-12"></div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         SECCIÓN DINÁMICA / VIDEO
+         Reemplaza el <video> src con tu propio archivo mp4.
+         Mientras tanto muestra fondo animado de marca.
+    ══════════════════════════════════════ -->
+    <div class="media-wrap" aria-label="Identidad visual de Hat Core en movimiento">
+
+      <!-- ── Blobs animados de marca (se ocultan si el video carga) ── -->
+      <div class="blob blob-1" aria-hidden="true"></div>
+      <div class="blob blob-2" aria-hidden="true"></div>
+      <div class="blob blob-3" aria-hidden="true"></div>
+      <div class="media-dots"  aria-hidden="true"></div>
+
+      <!-- Anillos concéntricos -->
+      <div class="ring" style="width:55vmin;height:55vmin;top:50%;left:50%;transform:translate(-50%,-50%)" aria-hidden="true"></div>
+      <div class="ring" style="width:75vmin;height:75vmin;top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:-3s" aria-hidden="true"></div>
+      <div class="ring" style="width:95vmin;height:95vmin;top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:-6s" aria-hidden="true"></div>
+
+      <!--
+        INSTRUCCIÓN: Para usar tu propio video descomenta el bloque <video> de abajo
+        y coloca la ruta de tu archivo mp4 en el atributo src.
+
+        <video class="media-video" autoplay muted loop playsinline poster="">
+          <source src="TU_VIDEO.mp4" type="video/mp4" />
+        </video>
+        <div class="media-video-overlay"></div>
+      -->
+
+      <!-- Contenido sobre el fondo animado -->
+      <div class="media-content">
+        <div style="max-width:700px; padding: 0 1.5rem;">
+          <p class="text-hat-cyan text-xs font-bold uppercase tracking-[.28em] mb-6" style="text-shadow:0 1px 8px rgba(0,0,0,.6)">Nuestro enfoque</p>
+          <blockquote>
+            <p class="font-black text-white leading-tight"
+               style="font-size:clamp(2rem,4.5vw,3.5rem); text-shadow:0 2px 20px rgba(0,0,0,.7);">
+              "Seguridad,<br />comportamiento humano<br />
+              y <span class="text-hat-cyan">creatividad."</span>
+            </p>
+          </blockquote>
+          <div class="mt-8 w-12 h-0.5 bg-hat-cyan mx-auto" style="opacity:.8"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         PROPÓSITO — sticky split con imágenes que cambian
+    ══════════════════════════════════════ -->
+    <section id="proposito" aria-labelledby="proposito-heading">
+      <div class="feat-section">
+
+        <!-- Columna sticky con imágenes intercambiables (solo desktop) -->
+        <div class="feat-sticky w-1/2" style="width:50%;" aria-hidden="true">
+          <!-- Imagen 1: Propósito -->
+          <img id="img-proposito" class="feat-img active"
+            src="images/proposito.jpg"
+            data-fallback="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=85"
+            alt="Equipo diverso de profesionales colaborando"
+            data-feat="0" loading="lazy" />
+          <!-- Imagen 2: Visión -->
+          <img id="img-vision" class="feat-img inactive"
+            src="images/vision.jpg"
+            data-fallback="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1400&q=85"
+            alt="Profesional con visión de futuro"
+            data-feat="1" loading="lazy" />
+          <!-- Imagen 3: Diferenciador -->
+          <img id="img-diferencia" class="feat-img inactive"
+            src="images/diferencia.jpg"
+            data-fallback="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=85"
+            alt="Trabajo colaborativo creativo y dinámico"
+            data-feat="2" loading="lazy" />
+          <div class="feat-img-overlay"></div>
+        </div>
+
+        <!-- Columna de texto con scroll -->
+        <div class="feat-scroll-col" style="width:50%;">
+
+          <!-- Pane 0: Propósito -->
+          <div class="feat-pane feat-trigger" data-feat="0" aria-labelledby="prop-title">
+            <div style="max-width:440px;">
+              <span class="inline-block px-3 py-1 rounded-full bg-hat-cyan/10 text-hat-cyan text-[11px] font-bold uppercase tracking-widest mb-7">Propósito</span>
+              <h2 id="proposito-heading" class="text-3xl md:text-4xl font-black text-hat-navy mb-6 leading-tight">
+                La SST como<br /><span class="gt">aliado estratégico</span>
+              </h2>
+              <p class="text-gray-500 font-normal leading-relaxed mb-7">
+                Impulsar el crecimiento de las organizaciones integrando la
+                <strong class="text-hat-navy font-semibold">Seguridad y Salud en el Trabajo</strong>
+                como un aliado estratégico, a través de metodologías claras, dinámicas y flexibles,
+                apoyadas en experiencias visuales y prácticas.
+              </p>
+              <div class="flex items-center gap-3 text-hat-cyan font-semibold text-sm">
+                <i class="fas fa-bullseye" aria-hidden="true"></i>
+                <span>Enfoque estratégico y humano</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pane 1: Visión -->
+          <div class="feat-pane feat-trigger" data-feat="1" aria-labelledby="vision-title">
+            <div style="max-width:440px;">
+              <span class="inline-block px-3 py-1 rounded-full bg-hat-violet/10 text-hat-violet text-[11px] font-bold uppercase tracking-widest mb-7">Visión</span>
+              <h3 id="vision-title" class="text-3xl md:text-4xl font-black text-hat-navy mb-6 leading-tight">
+                Una experiencia<br /><span class="gt">que se vive</span>
+              </h3>
+              <p class="text-gray-500 font-normal leading-relaxed mb-7">
+                Ser referentes en la evolución de la
+                <strong class="text-hat-navy font-semibold">Seguridad y Salud en el Trabajo</strong>,
+                integrándola como una experiencia consciente que se vive, se aplica y se refleja
+                en la cultura y la operación empresarial.
+              </p>
+              <div class="flex items-center gap-3 text-hat-violet font-semibold text-sm">
+                <i class="fas fa-eye" aria-hidden="true"></i>
+                <span>Cultura preventiva real y sostenible</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pane 2: Diferenciador -->
+          <div class="feat-pane feat-trigger" data-feat="2" aria-labelledby="dif-title">
+            <div style="max-width:440px;">
+              <span class="inline-block px-3 py-1 rounded-full bg-hat-cyan/10 text-hat-cyan text-[11px] font-bold uppercase tracking-widest mb-7">Lo que nos distingue</span>
+              <h3 id="dif-title" class="text-3xl md:text-4xl font-black text-hat-navy mb-6 leading-tight">
+                Seguridad,<br /><span class="gt">comportamiento y creatividad</span>
+              </h3>
+              <p class="text-gray-500 font-normal leading-relaxed mb-9">
+                Nuestro enfoque combina seguridad, comportamiento humano y creatividad para lograr
+                aprendizajes memorables, aplicables y sostenibles en el tiempo. Hablamos un
+                lenguaje cercano que genera confianza y compromiso real.
+              </p>
+              <a href="#contacto" class="btn-p">
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                Hablemos
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Mobile fallback: cards apiladas -->
+      <div class="lg:hidden bg-white">
+        <div class="h-64 overflow-hidden">
+          <img
+            src="images/proposito.jpg"
+            data-fallback="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
+            alt="Equipo diverso colaborando"
+            class="w-full h-full object-cover object-center"
+            loading="lazy"
+          />
+        </div>
+        <div class="px-6 py-14 space-y-14 max-w-xl mx-auto">
+          <article class="reveal">
+            <span class="inline-block px-3 py-1 rounded-full bg-hat-cyan/10 text-hat-cyan text-[11px] font-bold uppercase tracking-widest mb-5">Propósito</span>
+            <h3 class="text-2xl font-black text-hat-navy mb-4">La SST como aliado estratégico</h3>
+            <p class="text-gray-500 font-normal text-sm leading-relaxed">Impulsar el crecimiento de las organizaciones integrando la <strong class="text-hat-navy">Seguridad y Salud en el Trabajo</strong> como un aliado estratégico, a través de metodologías claras, dinámicas y flexibles.</p>
+          </article>
+          <article class="reveal d1">
+            <span class="inline-block px-3 py-1 rounded-full bg-hat-violet/10 text-hat-violet text-[11px] font-bold uppercase tracking-widest mb-5">Visión</span>
+            <h3 class="text-2xl font-black text-hat-navy mb-4">Una experiencia que se vive</h3>
+            <p class="text-gray-500 font-normal text-sm leading-relaxed">Ser referentes en la evolución de la SST, integrándola como una experiencia consciente que se vive, se aplica y se refleja en la cultura empresarial.</p>
+          </article>
+          <article class="reveal d2">
+            <span class="inline-block px-3 py-1 rounded-full bg-hat-cyan/10 text-hat-cyan text-[11px] font-bold uppercase tracking-widest mb-5">Lo que nos distingue</span>
+            <h3 class="text-2xl font-black text-hat-navy mb-4">Seguridad, comportamiento y creatividad</h3>
+            <p class="text-gray-500 font-normal text-sm leading-relaxed">Nuestro enfoque combina seguridad, comportamiento humano y creatividad para lograr aprendizajes memorables, aplicables y sostenibles en el tiempo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         METODOLOGÍA — fullbleed dark
+    ══════════════════════════════════════ -->
+    <section id="metodologia" class="fullbleed py-32 md:py-44" style="min-height:640px" aria-labelledby="met-heading">
+      <div id="bg-metodologia" class="fb-bg" style="
+        background-image:url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=2000&q=80');
+        background-position:center 40%;
+      " role="img" aria-label="Creatividad y aprendizaje visual"></div>
+      <div class="fb-ov" style="background:linear-gradient(160deg,rgba(30,27,75,.95) 0%,rgba(107,33,168,.84) 52%,rgba(6,182,212,.45) 100%)"></div>
+
+      <div class="fb-cnt max-w-6xl mx-auto px-6 text-center">
+        <p class="reveal text-hat-cyan text-xs font-bold uppercase tracking-[.28em] mb-5">Metodología</p>
+        <h2 id="met-heading" class="reveal d1 text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.07] mb-6">
+          Diseñamos<br /><span class="gt-warm">Experiencias</span>
+        </h2>
+        <p class="reveal d2 font-normal text-white/85 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-16"
+           style="text-shadow:0 1px 6px rgba(0,0,0,.4)">
+          No usamos formatos genéricos. Cada experiencia responde al contexto real
+          de trabajo, conectando con el comportamiento humano y facilitando aprendizajes prácticos.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-5">
+          <article class="reveal-scale d1 glass rounded-3xl p-8 text-left card-up">
+            <div class="w-12 h-12 rounded-2xl bg-hat-cyan/20 flex items-center justify-center mb-5">
+              <i class="fas fa-wand-magic-sparkles text-hat-cyan text-xl" aria-hidden="true"></i>
+            </div>
+            <h3 class="text-white font-bold text-lg mb-3">A la medida</h3>
+            <p class="text-white/65 font-normal text-sm leading-relaxed">
+              Metodologías diseñadas según los riesgos reales de cada organización.
+              Analizamos la norma, la simplificamos y la convertimos en acciones claras.
+            </p>
+          </article>
+
+          <article class="reveal-scale d2 glass rounded-3xl p-8 text-left card-up">
+            <div class="w-12 h-12 rounded-2xl bg-hat-lavender/25 flex items-center justify-center mb-5">
+              <i class="fas fa-bolt text-hat-lavender text-xl" aria-hidden="true"></i>
+            </div>
+            <h3 class="text-white font-bold text-lg mb-3">Disruptivas</h3>
+            <p class="text-white/65 font-normal text-sm leading-relaxed">
+              Más allá de la capacitación tradicional. Conectamos con el comportamiento
+              humano y generamos aprendizajes prácticos y fáciles de replicar.
+            </p>
+          </article>
+
+          <article class="reveal-scale d3 glass rounded-3xl p-8 text-left card-up">
+            <div class="w-12 h-12 rounded-2xl bg-hat-cyan/20 flex items-center justify-center mb-5">
+              <i class="fas fa-comments text-hat-cyan text-xl" aria-hidden="true"></i>
+            </div>
+            <h3 class="text-white font-bold text-lg mb-3">Cercanas</h3>
+            <p class="text-white/65 font-normal text-sm leading-relaxed">
+              Hablamos un lenguaje cercano y profesional que genera confianza real.
+              Trabajamos proactivamente para anticiparnos a los riesgos.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         OBJETIVOS
+    ══════════════════════════════════════ -->
+    <section class="py-24 bg-gray-50" aria-label="Objetivos de Hat Core">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-14">
+          <p class="reveal text-xs font-bold uppercase tracking-[.28em] text-hat-violet mb-4">Lo que buscamos</p>
+          <h2 class="reveal d1 text-3xl md:text-4xl font-black text-hat-navy">Nuestros Objetivos</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div class="reveal d1 card-up bg-white rounded-3xl p-7 border border-gray-100 flex items-start gap-5">
+            <div class="w-11 h-11 rounded-xl bg-hat-cyan/10 flex items-center justify-center shrink-0">
+              <i class="fas fa-file-shield text-hat-cyan" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-hat-navy text-sm mb-1">Requisitos legales fluidos</h3>
+              <p class="text-gray-400 font-normal text-xs leading-relaxed">Integrar la norma de SST de forma clara, práctica y fluida.</p>
+            </div>
+          </div>
+          <div class="reveal d2 card-up bg-white rounded-3xl p-7 border border-gray-100 flex items-start gap-5">
+            <div class="w-11 h-11 rounded-xl bg-hat-violet/10 flex items-center justify-center shrink-0">
+              <i class="fas fa-recycle text-hat-violet" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-hat-navy text-sm mb-1">Gestión simple y sostenible</h3>
+              <p class="text-gray-400 font-normal text-xs leading-relaxed">Evitar reprocesos y promover una gestión eficiente que perdure.</p>
+            </div>
+          </div>
+          <div class="reveal d3 card-up bg-white rounded-3xl p-7 border border-gray-100 flex items-start gap-5">
+            <div class="w-11 h-11 rounded-xl bg-hat-cyan/10 flex items-center justify-center shrink-0">
+              <i class="fas fa-palette text-hat-cyan" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-hat-navy text-sm mb-1">Creatividad y herramientas visuales</h3>
+              <p class="text-gray-400 font-normal text-xs leading-relaxed">Enfoques creativos que hacen que el aprendizaje deje huella.</p>
+            </div>
+          </div>
+          <div class="reveal d4 card-up bg-white rounded-3xl p-7 border border-gray-100 flex items-start gap-5">
+            <div class="w-11 h-11 rounded-xl bg-hat-violet/10 flex items-center justify-center shrink-0">
+              <i class="fas fa-brain text-hat-violet" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-hat-navy text-sm mb-1">Metodologías personalizadas</h3>
+              <p class="text-gray-400 font-normal text-xs leading-relaxed">Soluciones dinámicas diseñadas según los riesgos reales.</p>
+            </div>
+          </div>
+          <div class="reveal d5 card-up bg-white rounded-3xl p-7 border border-gray-100 flex items-start gap-5 sm:col-span-2 lg:col-span-1">
+            <div class="w-11 h-11 rounded-xl bg-hat-cyan/10 flex items-center justify-center shrink-0">
+              <i class="fas fa-shield-heart text-hat-cyan" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-hat-navy text-sm mb-1">Entornos seguros con impacto real</h3>
+              <p class="text-gray-400 font-normal text-xs leading-relaxed">Lugares de trabajo seguros y saludables con resultados medibles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         PROCESO COMPLETO
+    ══════════════════════════════════════ -->
+    <section id="proceso" class="py-24 md:py-36 bg-white" aria-labelledby="proceso-heading">
+      <div class="max-w-6xl mx-auto px-6">
+
+        <div class="text-center mb-20">
+          <p class="reveal text-xs font-bold uppercase tracking-[.28em] text-hat-cyan mb-4">Acompañamiento</p>
+          <h2 id="proceso-heading" class="reveal d1 text-4xl md:text-5xl lg:text-6xl font-black text-hat-navy leading-tight mb-5">
+            ¿Cómo acompañamos<br /><span class="gt">el proceso completo?</span>
+          </h2>
+          <p class="reveal d2 text-gray-500 font-normal text-base md:text-lg max-w-xl mx-auto leading-relaxed">
+            Cada intervención tiene un ciclo completo diseñado para garantizar que el aprendizaje se viva, se entienda y se aplique.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+          <div class="reveal-left order-2 lg:order-1 rounded-3xl overflow-hidden shadow-2xl shadow-violet-100/60 aspect-[4/3]">
+            <img
+              id="img-proceso"
+              src="images/proceso.jpg"
+              data-fallback="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=85"
+              alt="Profesionales colaborando en un ambiente de trabajo moderno"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="reveal-right order-1 lg:order-2 flex flex-col gap-9">
+
+            <article class="flex gap-6" aria-labelledby="s1">
+              <div class="flex flex-col items-center">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-hat-navy to-hat-purple flex items-center justify-center shrink-0 shadow-lg shadow-violet-200/50">
+                  <i class="fas fa-bullhorn text-hat-cyan text-xl" aria-hidden="true"></i>
+                </div>
+                <div class="w-0.5 flex-1 bg-gradient-to-b from-hat-violet to-hat-cyan my-3 min-h-[2rem]" aria-hidden="true"></div>
+              </div>
+              <div>
+                <p class="text-[10px] font-bold uppercase tracking-widest text-hat-cyan mb-1">Paso 01</p>
+                <h3 id="s1" class="text-xl font-black text-hat-navy mb-3">Campaña de Expectativa</h3>
+                <p class="text-gray-500 font-normal text-sm leading-relaxed">
+                  Antes de cada intervención activamos una campaña que informa, genera interés y
+                  <strong class="text-hat-navy">prepara a las personas</strong> para la experiencia que viene.
+                </p>
+              </div>
+            </article>
+
+            <article class="flex gap-6" aria-labelledby="s2">
+              <div class="flex flex-col items-center">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-hat-violet to-hat-cyan flex items-center justify-center shrink-0 shadow-lg shadow-cyan-200/50">
+                  <i class="fas fa-film text-white text-xl" aria-hidden="true"></i>
+                </div>
+                <div class="w-0.5 flex-1 bg-gradient-to-b from-hat-cyan to-hat-lime my-3 min-h-[2rem]" aria-hidden="true"></div>
+              </div>
+              <div>
+                <p class="text-[10px] font-bold uppercase tracking-widest text-hat-cyan mb-1">Paso 02</p>
+                <h3 id="s2" class="text-xl font-black text-hat-navy mb-3">Actividad Audiovisual</h3>
+                <p class="text-gray-500 font-normal text-sm leading-relaxed">
+                  Material audiovisual claro y moderno que <strong class="text-hat-navy">refuerza los mensajes clave</strong>
+                  y puede compartirse en los canales internos de la empresa.
+                </p>
+              </div>
+            </article>
+
+            <article class="flex gap-6" aria-labelledby="s3">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-hat-cyan to-hat-lime flex items-center justify-center shrink-0 shadow-lg shadow-cyan-200/50">
+                <i class="fas fa-flag-checkered text-white text-xl" aria-hidden="true"></i>
+              </div>
+              <div>
+                <p class="text-[10px] font-bold uppercase tracking-widest text-hat-cyan mb-1">Paso 03</p>
+                <h3 id="s3" class="text-xl font-black text-hat-navy mb-3">Cierre de Aprendizaje</h3>
+                <p class="text-gray-500 font-normal text-sm leading-relaxed">
+                  Un momento diseñado para asegurar que <strong class="text-hat-navy">lo aprendido se entienda y se aplique</strong>
+                  en el trabajo diario. El cierre es el comienzo del cambio real.
+                </p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         IMPACTO SOSTENIBLE — dark fullbleed
+    ══════════════════════════════════════ -->
+    <section id="impacto" class="fullbleed py-28 md:py-40" aria-labelledby="imp-heading">
+      <div id="bg-impacto" class="fb-bg" style="
+        background-image:url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2000&q=80');
+        background-position:center;
+      " role="img" aria-label="Ambiente de trabajo moderno y tecnológico"></div>
+      <div class="fb-ov" style="background:linear-gradient(160deg,rgba(30,27,75,.97) 0%,rgba(107,33,168,.90) 55%,rgba(30,27,75,.90) 100%)"></div>
+
+      <div class="fb-cnt max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <p class="reveal text-hat-cyan text-xs font-bold uppercase tracking-[.28em] mb-4">Resultados</p>
+          <h2 id="imp-heading" class="reveal d1 text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight">
+            Impacto<br /><span class="gt-warm">Sostenible</span>
+          </h2>
+          <p class="reveal d2 text-white/80 font-normal text-base md:text-lg max-w-xl mx-auto mt-5 leading-relaxed"
+             style="text-shadow:0 1px 6px rgba(0,0,0,.4)">
+            Cuando la SST se vive como experiencia consciente, los resultados trascienden
+            el cumplimiento y se convierten en cultura organizacional.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="impact-item reveal d1 rounded-2xl border border-white/10 p-7 flex items-start gap-5">
+            <div class="w-11 h-11 rounded-xl bg-hat-cyan/15 flex items-center justify-center shrink-0">
+              <i class="fas fa-industry text-hat-cyan text-lg" aria-hidden="true"></i>
+            </div>
+            <p class="font-bold text-white text-sm leading-tight pt-2">Seguridad integrada a la operación</p>
+          </div>
+          <div class="impact-item reveal d2 rounded-2xl border border-white/10 p-7 flex items-start gap-5">
+            <div class="w-11 h-11 rounded-xl bg-hat-lavender/15 flex items-center justify-center shrink-0">
+              <i class="fas fa-people-group text-hat-lavender text-lg" aria-hidden="true"></i>
+            </div>
+            <p class="font-bold text-white text-sm leading-tight pt-2">Bienestar y compromiso del equipo</p>
+          </div>
+          <div class="impact-item reveal d3 rounded-2xl border border-white/10 p-7 flex items-start gap-5">
+            <div class="w-11 h-11 rounded-xl bg-hat-cyan/15 flex items-center justify-center shrink-0">
+              <i class="fas fa-scale-balanced text-hat-cyan text-lg" aria-hidden="true"></i>
+            </div>
+            <p class="font-bold text-white text-sm leading-tight pt-2">Cumplimiento normativo fluido</p>
+          </div>
+          <div class="impact-item reveal d4 rounded-2xl border border-white/10 p-7 flex items-start gap-5">
+            <div class="w-11 h-11 rounded-xl bg-hat-lavender/15 flex items-center justify-center shrink-0">
+              <i class="fas fa-shield-heart text-hat-lavender text-lg" aria-hidden="true"></i>
+            </div>
+            <p class="font-bold text-white text-sm leading-tight pt-2">Cultura preventiva sólida</p>
+          </div>
+          <div class="impact-item reveal d5 rounded-2xl border border-white/10 p-7 flex items-start gap-5">
+            <div class="w-11 h-11 rounded-xl bg-hat-cyan/15 flex items-center justify-center shrink-0">
+              <i class="fas fa-chart-line text-hat-cyan text-lg" aria-hidden="true"></i>
+            </div>
+            <p class="font-bold text-white text-sm leading-tight pt-2">Procesos claros y medibles</p>
+          </div>
+          <div class="impact-item reveal d6 rounded-2xl border border-white/10 p-7 flex items-start gap-5">
+            <div class="w-11 h-11 rounded-xl bg-hat-lavender/15 flex items-center justify-center shrink-0">
+              <i class="fas fa-lightbulb text-hat-lavender text-lg" aria-hidden="true"></i>
+            </div>
+            <p class="font-bold text-white text-sm leading-tight pt-2">Innovación con resultados reales</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         QUOTE BANNER — fullbleed
+    ══════════════════════════════════════ -->
+    <section class="fullbleed py-36 md:py-56 text-center px-6" aria-label="Declaración filosófica">
+      <div id="bg-quote" class="fb-bg" style="
+        background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=2000&q=80');
+        background-position:center 30%;
+      " role="img" aria-label="Grupo de personas con actitud positiva y colaborativa"></div>
+      <div class="fb-ov" style="background:linear-gradient(180deg,rgba(30,27,75,.80) 0%,rgba(107,33,168,.70) 50%,rgba(30,27,75,.85) 100%)"></div>
+
+      <div class="fb-cnt max-w-4xl mx-auto">
+        <blockquote class="reveal">
+          <p class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight"
+             style="text-shadow:0 2px 16px rgba(0,0,0,.45)">
+            "Proteger es un proceso<br />consciente que se vive<br />
+            <span class="text-hat-cyan">todos los días."</span>
+          </p>
+          <footer class="mt-8 text-white/40 text-xs uppercase tracking-widest font-medium">
+            Hat Core — Unidad de Gestión y Seguridad para el Trabajo
+          </footer>
+        </blockquote>
+        <div class="reveal d2 mt-12">
+          <a href="#contacto" class="btn-p inline-flex">
+            <i class="fas fa-rocket" aria-hidden="true"></i>
+            Inicia la Transformación
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CTA / CONTACTO
+    ══════════════════════════════════════ -->
+    <section id="contacto" class="py-24 md:py-36 bg-white" aria-labelledby="cta-heading">
+      <div class="max-w-3xl mx-auto px-6 text-center">
+
+        <p class="reveal text-xs font-bold uppercase tracking-[.28em] text-hat-cyan mb-5">Comencemos</p>
+        <h2 id="cta-heading" class="reveal d1 text-4xl md:text-5xl lg:text-6xl font-black text-hat-navy leading-tight mb-5">
+          ¿Listo para transformar<br /><span class="gt">la SST en tu empresa?</span>
+        </h2>
+        <p class="reveal d2 text-base md:text-lg text-gray-500 font-normal leading-relaxed mb-14 max-w-xl mx-auto">
+          Da el primer paso hacia una Seguridad y Salud en el Trabajo que conecta,
+          motiva y genera cultura preventiva real en tu equipo.
+        </p>
+
+        <form class="reveal d3 bg-gray-50 rounded-3xl p-8 md:p-12 border border-gray-100 text-left"
+              aria-label="Formulario de contacto Hat Core" novalidate>
+
+          <div class="grid md:grid-cols-2 gap-5 mb-5">
+            <div>
+              <label for="nombre" class="block text-[11px] font-bold text-hat-navy mb-2 uppercase tracking-wide">
+                Nombre completo <span class="text-hat-violet" aria-hidden="true">*</span>
+              </label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name" class="hat-input" />
+            </div>
+            <div>
+              <label for="empresa" class="block text-[11px] font-bold text-hat-navy mb-2 uppercase tracking-wide">
+                Empresa <span class="text-hat-violet" aria-hidden="true">*</span>
+              </label>
+              <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required autocomplete="organization" class="hat-input" />
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-5 mb-5">
+            <div>
+              <label for="email" class="block text-[11px] font-bold text-hat-navy mb-2 uppercase tracking-wide">
+                Correo electrónico <span class="text-hat-violet" aria-hidden="true">*</span>
+              </label>
+              <input type="email" id="email" name="email" placeholder="tu@correo.com" required autocomplete="email" class="hat-input" />
+            </div>
+            <div>
+              <label for="telefono" class="block text-[11px] font-bold text-hat-navy mb-2 uppercase tracking-wide">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000" autocomplete="tel" class="hat-input" />
+            </div>
+          </div>
+
+          <div class="mb-8">
+            <label for="mensaje" class="block text-[11px] font-bold text-hat-navy mb-2 uppercase tracking-wide">
+              ¿Cuál es tu necesidad en SST? <span class="text-hat-violet" aria-hidden="true">*</span>
+            </label>
+            <textarea id="mensaje" name="mensaje" rows="4" required
+              placeholder="Cuéntanos sobre tu empresa y lo que necesitas mejorar en Seguridad y Salud en el Trabajo..."
+              class="hat-input resize-none"></textarea>
+          </div>
+
+          <div class="text-center">
+            <button type="submit" id="submitBtn"
+              class="btn-p inline-flex w-full md:w-auto justify-center px-14 py-4 text-sm md:text-base">
+              <i class="fas fa-paper-plane" aria-hidden="true"></i>
+              Inicia la Transformación
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="bg-hat-navy py-14" role="contentinfo">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 mb-10">
+
+        <div class="text-center md:text-left">
+          <img
+            src="logo-blanco.png"
+            alt="Hat Core — Unidad de Gestión y Seguridad para el Trabajo"
+            class="h-16 w-auto object-contain mx-auto md:mx-0"
+          />
+        </div>
+
+        <nav aria-label="Navegación del pie de página">
+          <ul class="flex flex-wrap justify-center gap-x-8 gap-y-3">
+            <li><a href="#proposito"   class="text-white/45 hover:text-hat-cyan text-sm transition-colors">Propósito</a></li>
+            <li><a href="#metodologia" class="text-white/45 hover:text-hat-cyan text-sm transition-colors">Metodología</a></li>
+            <li><a href="#proceso"     class="text-white/45 hover:text-hat-cyan text-sm transition-colors">Proceso</a></li>
+            <li><a href="#impacto"     class="text-white/45 hover:text-hat-cyan text-sm transition-colors">Impacto</a></li>
+            <li><a href="#contacto"    class="text-white/45 hover:text-hat-cyan text-sm transition-colors">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="text-center md:text-right">
+          <p class="text-white/30 text-xs leading-relaxed">Seguridad y Salud en el Trabajo<br />consciente y creativa.</p>
+        </div>
+      </div>
+      <div class="border-t border-white/8 pt-8 text-center">
+        <p class="text-white/20 text-xs">&copy; 2025 Hat Core. Todos los derechos reservados. &nbsp;|&nbsp; Seguridad y Salud en el Trabajo</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════
+       SCRIPTS
+  ══════════════════════════════════════ -->
+  <script>
+    /* ╔══════════════════════════════════════════════════════════════╗
+       ║  📸  CONFIGURACIÓN DE IMÁGENES — EDITA SOLO ESTA SECCIÓN   ║
+       ╠══════════════════════════════════════════════════════════════╣
+       ║  INSTRUCCIONES PARA EL DISEÑADOR:                           ║
+       ║                                                              ║
+       ║  1. Exporta tu foto (JPG o PNG, mínimo 1920px de ancho)     ║
+       ║  2. Nómbrala igual que el archivo indicado abajo            ║
+       ║  3. Guárdala dentro de la carpeta  images/                  ║
+       ║  4. Recarga el navegador — la foto aparece automáticamente  ║
+       ║                                                              ║
+       ║  Si una imagen no carga, se muestra la foto de ejemplo.     ║
+       ╚══════════════════════════════════════════════════════════════╝ */
+
+    const IMG = {
+      // SECCIÓN HERO (pantalla de inicio)
+      // → Foto a pantalla completa, la persona debe mirar hacia la izquierda
+      hero:        'images/hero.jpg',
+
+      // SECCIÓN PROPÓSITO — panel izquierdo sticky
+      // → Foto de equipo colaborando o personas en acción
+      proposito:   'images/proposito.jpg',
+
+      // SECCIÓN VISIÓN — panel izquierdo sticky (aparece al hacer scroll)
+      // → Foto individual, mirada al futuro, profesional
+      vision:      'images/vision.jpg',
+
+      // SECCIÓN DIFERENCIADOR — panel izquierdo sticky (última parte)
+      // → Foto de trabajo creativo o sesión dinámica
+      diferencia:  'images/diferencia.jpg',
+
+      // SECCIÓN METODOLOGÍA — fondo a sangre con overlay oscuro
+      // → Foto abstracta, libros, creatividad o educación
+      metodologia: 'images/metodologia.jpg',
+
+      // SECCIÓN PROCESO — foto al lado del timeline de pasos
+      // → Dos personas colaborando, ambiente de oficina moderno
+      proceso:     'images/proceso.jpg',
+
+      // SECCIÓN IMPACTO — fondo a sangre con overlay oscuro
+      // → Foto tecnológica, persona con energía, moderna
+      impacto:     'images/impacto.jpg',
+
+      // SECCIÓN QUOTE FINAL — fondo a sangre con overlay oscuro
+      // → Grupo de personas, actitud positiva, exterior o estudio
+      quote:       'images/quote.jpg',
+    };
+
+    /* ── Aplicar imágenes con fallback automático a Unsplash ── */
+    document.querySelectorAll('[data-fallback]').forEach(el => {
+      el.onerror = function() {
+        if (this.dataset.fallback && this.src !== this.dataset.fallback) {
+          this.src = this.dataset.fallback;
+        }
+      };
+      // Asignar src desde config si coincide con el id
+      const key = Object.keys(IMG).find(k => el.id === 'img-' + k);
+      if (key) el.src = IMG[key];
+    });
+
+    /* ── Aplicar fondos CSS con fallback ── */
+    const bgMap = {
+      'bg-metodologia': IMG.metodologia,
+      'bg-impacto':     IMG.impacto,
+      'bg-quote':       IMG.quote,
+    };
+    Object.entries(bgMap).forEach(([id, src]) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      // Intenta imagen local; si falla mantiene el fallback de Unsplash ya en el style
+      const testImg = new Image();
+      testImg.onload = () => { el.style.backgroundImage = `url('${src}')`; };
+      testImg.src = src;
+    });
+
+    /* ─────────────────────────────────────────────────────────────────
+       SOBRE LAS ALERTAS EN CONSOLA:
+       ─────────────────────────────────────────────────────────────────
+       ① "cdn.tailwindcss.com should not be used in production"
+          → Es solo un aviso informativo de Tailwind. NO afecta el
+            funcionamiento. Al publicar en GitHub Pages o cualquier
+            servidor, la página funciona perfectamente igual.
+
+       ② "Unsafe attempt to load URL file://..."
+          → Ocurre ÚNICAMENTE cuando abres el archivo directo desde
+            tu disco (doble clic). En un servidor web o GitHub Pages
+            esta advertencia desaparece completamente. No es un error.
+       ───────────────────────────────────────────────────────────────── */
+
+    // ── Navbar scroll + logo swap ──
+    const navbar     = document.getElementById('navbar');
+    const logoTexto  = document.getElementById('logoTexto');
+    const logoColor  = document.getElementById('logoColor');
+
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY > 60;
+      navbar.classList.toggle('scrolled', scrolled);
+      // Antes del scroll: texto HatCore | Al hacer scroll: imagen logo color
+      logoTexto.classList.toggle('hidden', scrolled);
+      logoColor.classList.toggle('hidden', !scrolled);
+    }, { passive: true });
+
+    // ── Mobile menu ──
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('hidden') === false;
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    function closeMobileMenu() {
+      mobileMenu.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
+    document.addEventListener('click', (e) => {
+      if (!navbar.contains(e.target)) closeMobileMenu();
+    });
+
+    // ── Scroll-reveal ──
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => revealObs.observe(el));
+
+    // ── FEAT STICKY: image swap on scroll ──
+    const featTriggers = document.querySelectorAll('.feat-trigger');
+    const featImgs     = document.querySelectorAll('.feat-img');
+
+    if (window.innerWidth >= 1024 && featTriggers.length > 0) {
+      const featObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const idx = entry.target.dataset.feat;
+            featImgs.forEach(img => {
+              const match = img.dataset.feat === idx;
+              img.classList.toggle('active',   match);
+              img.classList.toggle('inactive', !match);
+            });
+          }
+        });
+      }, { threshold: 0.45, rootMargin: '-5% 0px -5% 0px' });
+
+      featTriggers.forEach(el => featObs.observe(el));
+    }
+
+    // ── Active nav section highlight ──
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks  = document.querySelectorAll('#navbar a[href^="#"]');
+    const secObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && navbar.classList.contains('scrolled')) {
+          const id = entry.target.id;
+          navLinks.forEach(link => {
+            link.style.color = link.getAttribute('href') === `#${id}` ? '#7C3AED' : '';
+          });
+        }
+      });
+    }, { threshold: 0.35 });
+    sections.forEach(s => secObs.observe(s));
+
+    // ── Form submit ──
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('#submitBtn');
+      btn.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i>&nbsp;¡Mensaje enviado!';
+      btn.disabled  = true;
+      btn.style.background  = '#10B981';
+      btn.style.boxShadow   = '0 8px 28px rgba(16,185,129,.38)';
+    });
+  </script>
+</body>
+</html>
