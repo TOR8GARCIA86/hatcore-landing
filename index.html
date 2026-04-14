@@ -956,38 +956,57 @@
           <div class="grid md:grid-cols-2 gap-5 mb-5">
             <div>
               <label for="nombre" class="block text-[11px] font-bold text-hat-navy mb-2 uppercase tracking-wide">
-                Nombre completo <span class="text-hat-violet" aria-hidden="true">*</span>
+                Nombre de contacto <span class="text-hat-violet" aria-hidden="true">*</span>
               </label>
               <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name" class="hat-input" />
             </div>
             <div>
-              <label for="empresa" class="block text-[11px] font-bold text-hat-navy mb-2 uppercase tracking-wide">
-                Empresa <span class="text-hat-violet" aria-hidden="true">*</span>
+              <label for="telefono" class="block text-[11px] font-bold text-hat-navy mb-2 uppercase tracking-wide">
+                Número de contacto <span class="text-hat-violet" aria-hidden="true">*</span>
               </label>
-              <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required autocomplete="organization" class="hat-input" />
+              <input type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000" required autocomplete="tel" class="hat-input" />
             </div>
           </div>
 
           <div class="grid md:grid-cols-2 gap-5 mb-5">
             <div>
               <label for="email" class="block text-[11px] font-bold text-hat-navy mb-2 uppercase tracking-wide">
-                Correo electrónico <span class="text-hat-violet" aria-hidden="true">*</span>
+                Correo <span class="text-hat-violet" aria-hidden="true">*</span>
               </label>
               <input type="email" id="email" name="email" placeholder="tu@correo.com" required autocomplete="email" class="hat-input" />
             </div>
             <div>
-              <label for="telefono" class="block text-[11px] font-bold text-hat-navy mb-2 uppercase tracking-wide">Teléfono</label>
-              <input type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000" autocomplete="tel" class="hat-input" />
+              <label for="cargo" class="block text-[11px] font-bold text-hat-navy mb-2 uppercase tracking-wide">Cargo</label>
+              <input type="text" id="cargo" name="cargo" placeholder="Tu cargo" autocomplete="organization-title" class="hat-input" />
             </div>
           </div>
 
-          <div class="mb-8">
-            <label for="mensaje" class="block text-[11px] font-bold text-hat-navy mb-2 uppercase tracking-wide">
-              ¿Cuál es tu necesidad en SST? <span class="text-hat-violet" aria-hidden="true">*</span>
-            </label>
-            <textarea id="mensaje" name="mensaje" rows="4" required
-              placeholder="Cuéntanos sobre tu empresa y lo que necesitas mejorar en Seguridad y Salud en el Trabajo..."
-              class="hat-input resize-none"></textarea>
+          <div class="grid md:grid-cols-2 gap-5 mb-5">
+            <div>
+              <label for="empresa" class="block text-[11px] font-bold text-hat-navy mb-2 uppercase tracking-wide">
+                Empresa <span class="text-hat-violet" aria-hidden="true">*</span>
+              </label>
+              <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required autocomplete="organization" class="hat-input" />
+            </div>
+            <div>
+              <label for="nit" class="block text-[11px] font-bold text-hat-navy mb-2 uppercase tracking-wide">NIT</label>
+              <input type="text" id="nit" name="nit" placeholder="NIT de tu empresa" class="hat-input" />
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-5 mb-8">
+            <div>
+              <label for="riesgo" class="block text-[11px] font-bold text-hat-navy mb-2 uppercase tracking-wide">Riesgo</label>
+              <input type="text" id="riesgo" name="riesgo" placeholder="Nivel de riesgo" class="hat-input" />
+            </div>
+            <div>
+              <label for="sector" class="block text-[11px] font-bold text-hat-navy mb-2 uppercase tracking-wide">Sector</label>
+              <input type="text" id="sector" name="sector" placeholder="Sector económico" class="hat-input" />
+            </div>
+            <div>
+              <label for="empleados" class="block text-[11px] font-bold text-hat-navy mb-2 uppercase tracking-wide">N.º de empleados aprox.</label>
+              <input type="number" id="empleados" name="empleados" placeholder="Ej: 50" min="1" class="hat-input" />
+            </div>
           </div>
 
           <div class="text-center">
