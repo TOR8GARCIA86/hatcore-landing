@@ -161,17 +161,28 @@
     .card-up { transition: transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s ease; }
     .card-up:hover { transform:translateY(-6px); box-shadow: 0 20px 44px rgba(124,58,237,.13); }
 
-    /* ── Metodología cards: descripción oculta → visible al hover ── */
-    .met-card { cursor:default; }
+    /* ── Metodología cards: ícono + título centrados, descripción al hover ── */
+    .met-card {
+      cursor: default;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      min-height: 220px;
+      justify-content: center;
+    }
     .met-card .met-desc {
       max-height: 0;
       opacity: 0;
       overflow: hidden;
-      transition: max-height .45s cubic-bezier(.16,1,.3,1), opacity .35s ease;
+      transition: max-height .45s cubic-bezier(.16,1,.3,1), opacity .35s ease, margin-top .3s ease;
+      margin-top: 0;
+      text-align: center;
     }
     .met-card:hover .met-desc {
       max-height: 160px;
       opacity: 1;
+      margin-top: 1rem;
     }
 
     /* ── ANIMATED MEDIA (after brand statement) ── */
