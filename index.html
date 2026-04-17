@@ -1251,14 +1251,52 @@
     }, { threshold: 0.35 });
     sections.forEach(s => secObs.observe(s));
 
-    // ── Form submit ──
-    document.querySelector('form').addEventListener('submit', function(e) {
+    // ── Form submit → Web3Forms ──
+    document.querySelector('form').addEventListener('submit', async function(e) {
       e.preventDefault();
-      const btn = this.querySelector('#submitBtn');
-      btn.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i>&nbsp;¡Mensaje enviado!';
-      btn.disabled  = true;
-      btn.style.background  = '#10B981';
-      btn.style.boxShadow   = '0 8px 28px rgba(16,185,129,.38)';
+      const btn  = document.getElementById('submitBtn');
+      const form = this;
+
+      // Estado: enviando
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i>&nbsp;Enviando…';
+
+      const data = {
+        access_key: 'HAT_CORE_KEY',   // ← se reemplaza con la clave real
+        subject:    'Nuevo contacto desde Hat Core Web',
+        from_name:  'Hat Core Landing',
+        nombre:     form.nombre?.value    || '',
+        telefono:   form.telefono?.value  || '',
+        email:      form.email?.value     || '',
+        cargo:      form.cargo?.value     || '',
+        empresa:    form.empresa?.value   || '',
+        nit:        form.nit?.value       || '',
+        riesgo:     form.riesgo?.value    || '',
+        sector:     form.sector?.value    || '',
+        empleados:  form.empleados?.value || '',
+      };
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body:    JSON.stringify(data),
+        });
+        const json = await res.json();
+
+        if (json.success) {
+          btn.innerHTML  = '<i class="fas fa-check" aria-hidden="true"></i>&nbsp;¡Mensaje enviado!';
+          btn.style.background  = '#10B981';
+          btn.style.boxShadow   = '0 8px 28px rgba(16,185,129,.38)';
+          form.reset();
+        } else {
+          throw new Error(json.message || 'Error al enviar');
+        }
+      } catch (err) {
+        btn.disabled  = false;
+        btn.innerHTML = '<i class="fas fa-paper-plane" aria-hidden="true"></i>&nbsp;Inicia la Transformación';
+        alert('No se pudo enviar el mensaje. Por favor intenta de nuevo o escríbenos por WhatsApp.');
+      }
     });
   </script>
   <!-- ══════════════════════════════════════
