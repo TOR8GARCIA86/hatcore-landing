@@ -283,10 +283,22 @@
     }
     @media (max-width: 1023px) {
       .feat-section { flex-direction: column; }
-      .feat-sticky  { display: none; }
-      .feat-scroll-col { background: white; }
-      .feat-pane { min-height: auto; padding: 4rem 1.5rem; text-align: center; }
-      .feat-pane > div { margin-left: auto; margin-right: auto; }
+      .feat-sticky  { display: none !important; }
+      .feat-scroll-col { background: white; width: 100% !important; }
+      .feat-pane {
+        min-height: auto;
+        padding: 4rem 1.5rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .feat-pane > div {
+        width: 100%;
+        max-width: 100% !important;
+        margin-left: auto;
+        margin-right: auto;
+      }
       .feat-pane .flex { justify-content: center; }
     }
 
