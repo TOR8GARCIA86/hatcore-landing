@@ -1149,37 +1149,85 @@
   </main>
 
   <!-- ══════════════════════════════════════
-       FOOTER
+       PRE-FOOTER — Logo color + contacto
   ══════════════════════════════════════ -->
-  <footer class="bg-hat-navy py-14" role="contentinfo">
+  <div class="bg-white py-14 border-t border-gray-100">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-8 mb-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-10">
 
-        <div class="text-center md:text-left">
+        <!-- Logo a color -->
+        <div class="flex justify-center md:justify-start">
           <img
-            src="logo-blanco.png"
-            alt="Logo Hat Core — Consultoría SST y Seguridad y Salud en el Trabajo Colombia"
-            class="h-16 w-auto object-contain mx-auto md:mx-0"
+            src="images/logo-color.png"
+            alt="Logo Hat Core — Consultoría SST Colombia"
+            class="h-20 md:h-24 w-auto object-contain"
           />
         </div>
 
+        <!-- Datos de contacto -->
+        <div class="flex flex-col sm:flex-row gap-8 text-center sm:text-left">
+
+          <div class="flex flex-col items-center sm:items-start gap-1">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-hat-violet mb-1">Correo</span>
+            <a href="mailto:comercial@hatsst.com"
+               class="text-hat-navy font-semibold text-sm hover:text-hat-violet transition-colors flex items-center gap-2">
+              <i class="fas fa-envelope text-hat-cyan"></i>
+              comercial@hatsst.com
+            </a>
+          </div>
+
+          <div class="flex flex-col items-center sm:items-start gap-2">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-hat-violet mb-1">Móviles</span>
+            <a href="tel:+574142410514"
+               class="text-hat-navy font-semibold text-sm hover:text-hat-violet transition-colors flex items-center gap-2">
+              <i class="fas fa-phone text-hat-cyan"></i>
+              314 241 0514
+            </a>
+            <a href="tel:+573124666601"
+               class="text-hat-navy font-semibold text-sm hover:text-hat-violet transition-colors flex items-center gap-2">
+              <i class="fab fa-whatsapp text-green-500"></i>
+              312 466 6601
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Tagline -->
+        <div class="text-center md:text-right max-w-[200px]">
+          <p class="text-gray-400 text-xs leading-relaxed">Seguridad y Salud en el Trabajo<br /><span class="text-hat-violet font-semibold">consciente y creativa.</span></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       FOOTER — Barra oscura
+  ══════════════════════════════════════ -->
+  <footer class="bg-hat-navy py-10" role="contentinfo">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
+
+        <img
+          src="logo-blanco.png"
+          alt="Logo Hat Core — Consultoría SST y Seguridad y Salud en el Trabajo Colombia"
+          class="h-12 w-auto object-contain"
+        />
+
         <nav aria-label="Navegación del pie de página">
-          <ul class="flex flex-wrap justify-center gap-x-8 gap-y-3">
-            <li><a href="#proposito"   class="text-white/45 hover:text-hat-cyan text-sm transition-colors">Propósito</a></li>
-            <li><a href="#metodologia" class="text-white/45 hover:text-hat-cyan text-sm transition-colors">Metodología</a></li>
-            <li><a href="#proceso"     class="text-white/45 hover:text-hat-cyan text-sm transition-colors">Proceso</a></li>
-            <li><a href="#impacto"     class="text-white/45 hover:text-hat-cyan text-sm transition-colors">Impacto</a></li>
-            <li><a href="#contacto"    class="text-white/45 hover:text-hat-cyan text-sm transition-colors">Contacto</a></li>
+          <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3">
+            <li><a href="#proposito"   class="text-white/40 hover:text-hat-cyan text-xs transition-colors">Propósito</a></li>
+            <li><a href="#metodologia" class="text-white/40 hover:text-hat-cyan text-xs transition-colors">Metodología</a></li>
+            <li><a href="#proceso"     class="text-white/40 hover:text-hat-cyan text-xs transition-colors">Proceso</a></li>
+            <li><a href="#impacto"     class="text-white/40 hover:text-hat-cyan text-xs transition-colors">Impacto</a></li>
+            <li><a href="#contacto"    class="text-white/40 hover:text-hat-cyan text-xs transition-colors">Contacto</a></li>
           </ul>
         </nav>
 
-        <div class="text-center md:text-right">
-          <p class="text-white/30 text-xs leading-relaxed">Seguridad y Salud en el Trabajo<br />consciente y creativa.</p>
-        </div>
       </div>
-      <div class="border-t border-white/8 pt-8 text-center">
+      <div class="border-t border-white/8 pt-7 text-center">
         <p class="text-white/20 text-xs mb-3">&copy; 2026 Hat Core. Todos los derechos reservados.</p>
-        <p class="text-white/15 text-[10px] leading-relaxed max-w-2xl mx-auto">
+        <p class="text-white/12 text-[10px] leading-relaxed max-w-2xl mx-auto">
           Especialistas en <strong class="font-normal">Seguridad y Salud en el Trabajo</strong> ·
           <strong class="font-normal">Cultura Preventiva</strong> ·
           <strong class="font-normal">Gestión de Riesgos</strong> ·
