@@ -1268,7 +1268,14 @@
           <div class="grid md:grid-cols-3 gap-5 mb-8">
             <div>
               <label for="riesgo" class="block text-[11px] font-bold text-hat-navy mb-2 uppercase tracking-wide">Riesgo</label>
-              <input type="text" id="riesgo" name="riesgo" placeholder="Nivel de riesgo" class="hat-input" />
+              <select id="riesgo" name="riesgo" class="hat-input">
+                <option value="" disabled selected>Selecciona el nivel</option>
+                <option value="1">Nivel I</option>
+                <option value="2">Nivel II</option>
+                <option value="3">Nivel III</option>
+                <option value="4">Nivel IV</option>
+                <option value="5">Nivel V</option>
+              </select>
             </div>
             <div>
               <label for="empleados" class="block text-[11px] font-bold text-hat-navy mb-2 uppercase tracking-wide">N.º de empleados aprox.</label>
