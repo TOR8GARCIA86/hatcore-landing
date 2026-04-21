@@ -1594,6 +1594,131 @@
     });
   </script>
   <!-- ══════════════════════════════════════
+       MODAL — POLÍTICA HABEAS DATA
+  ══════════════════════════════════════ -->
+  <div id="modal-habeas" class="hidden fixed inset-0 z-[9998] flex items-center justify-center p-4"
+       role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"
+         onclick="document.getElementById('modal-habeas').classList.add('hidden')"></div>
+
+    <!-- Contenido -->
+    <div class="relative bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[85vh] flex flex-col overflow-hidden">
+
+      <!-- Header -->
+      <div class="px-8 py-6 border-b border-gray-100 flex items-start justify-between gap-4 shrink-0">
+        <div>
+          <p class="text-[10px] font-bold uppercase tracking-widest text-hat-violet mb-1">Hat Core</p>
+          <h2 id="modal-title" class="text-xl font-black text-hat-navy leading-tight">
+            Política de Tratamiento de Datos Personales
+          </h2>
+        </div>
+        <button onclick="document.getElementById('modal-habeas').classList.add('hidden')"
+          class="shrink-0 w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
+          aria-label="Cerrar">
+          <i class="fas fa-times text-gray-500 text-sm"></i>
+        </button>
+      </div>
+
+      <!-- Cuerpo scrollable -->
+      <div class="px-8 py-6 overflow-y-auto text-gray-600 text-sm leading-relaxed space-y-5">
+
+        <p><strong class="text-hat-navy">Fecha de vigencia:</strong> Abril de 2026</p>
+
+        <div>
+          <h3 class="font-bold text-hat-navy mb-2">1. Responsable del Tratamiento</h3>
+          <p><strong>Razón social:</strong> Hat Core — Unidad de Gestión y Seguridad para el Trabajo<br/>
+          <strong>Dirección:</strong> Carrera 28 #80-10, Bogotá D.C., Colombia<br/>
+          <strong>Correo electrónico:</strong> comercial@hatsst.com<br/>
+          <strong>Teléfonos:</strong> 314 241 0514 — 312 466 6601</p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-hat-navy mb-2">2. Marco Legal</h3>
+          <p>La presente política se rige por la <strong>Ley Estatutaria 1581 de 2012</strong> de Protección de Datos Personales, el <strong>Decreto Reglamentario 1377 de 2013</strong>, la <strong>Ley 1266 de 2008</strong> y demás normas concordantes emitidas por la Superintendencia de Industria y Comercio (SIC) de Colombia.</p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-hat-navy mb-2">3. Datos Personales Recopilados</h3>
+          <p>Hat Core podrá recopilar los siguientes datos personales a través de sus canales digitales y físicos:</p>
+          <ul class="list-disc pl-5 mt-2 space-y-1">
+            <li>Nombre completo y apellidos</li>
+            <li>Número de teléfono o celular de contacto</li>
+            <li>Correo electrónico</li>
+            <li>Cargo o rol en la empresa</li>
+            <li>Nombre y NIT de la empresa</li>
+            <li>Nivel de riesgo y número de empleados</li>
+            <li>Información relacionada con necesidades en Seguridad y Salud en el Trabajo (SST)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-hat-navy mb-2">4. Finalidades del Tratamiento</h3>
+          <p>Los datos personales recopilados serán utilizados exclusivamente para las siguientes finalidades:</p>
+          <ul class="list-disc pl-5 mt-2 space-y-1">
+            <li>Atender solicitudes de información, cotizaciones y propuestas comerciales</li>
+            <li>Gestionar la relación contractual con clientes y aliados</li>
+            <li>Enviar comunicaciones sobre servicios, novedades y contenidos relacionados con SST</li>
+            <li>Realizar seguimiento postventa y medición de satisfacción</li>
+            <li>Cumplir con obligaciones legales y regulatorias</li>
+            <li>Mejorar la calidad de los servicios prestados</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-hat-navy mb-2">5. Derechos del Titular</h3>
+          <p>Conforme al artículo 8 de la Ley 1581 de 2012, el titular de los datos tiene los siguientes derechos:</p>
+          <ul class="list-disc pl-5 mt-2 space-y-1">
+            <li><strong>Conocer</strong> los datos personales que Hat Core tiene sobre usted</li>
+            <li><strong>Actualizar y rectificar</strong> sus datos cuando sean inexactos o incompletos</li>
+            <li><strong>Suprimir</strong> sus datos cuando no sean necesarios para la finalidad que justificó su recopilación</li>
+            <li><strong>Revocar</strong> la autorización otorgada para el tratamiento</li>
+            <li><strong>Acceder gratuitamente</strong> a sus datos personales que hayan sido objeto de tratamiento</li>
+            <li><strong>Presentar quejas</strong> ante la Superintendencia de Industria y Comercio (SIC)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-hat-navy mb-2">6. Ejercicio de Derechos</h3>
+          <p>Para ejercer cualquiera de los derechos mencionados, el titular podrá enviar una solicitud escrita a <strong>comercial@hatsst.com</strong> indicando: nombre completo, documento de identidad, descripción de la solicitud y datos de contacto. Hat Core dará respuesta en un término no mayor a <strong>15 días hábiles</strong> a partir de la fecha de recibo de la solicitud.</p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-hat-navy mb-2">7. Transferencia y Transmisión de Datos</h3>
+          <p>Hat Core no venderá, alquilará ni cederá los datos personales a terceros sin autorización previa del titular, salvo en los casos previstos por la ley o cuando sea estrictamente necesario para la prestación del servicio contratado, bajo acuerdos de confidencialidad y con las mismas garantías de seguridad.</p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-hat-navy mb-2">8. Medidas de Seguridad</h3>
+          <p>Hat Core adoptará las medidas técnicas, humanas y administrativas necesarias para garantizar la seguridad de los datos personales y evitar su adulteración, pérdida, consulta, uso o acceso no autorizado o fraudulento.</p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-hat-navy mb-2">9. Vigencia</h3>
+          <p>Los datos personales serán conservados durante el tiempo que sea necesario para cumplir las finalidades descritas o mientras subsista la obligación legal o contractual que motivó su recopilación. Una vez cumplida la finalidad, serán eliminados de forma segura.</p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-hat-navy mb-2">10. Modificaciones a la Política</h3>
+          <p>Hat Core se reserva el derecho de actualizar esta política en cualquier momento. Los cambios serán informados a través del sitio web oficial. El uso continuado de los servicios implica la aceptación de las modificaciones realizadas.</p>
+        </div>
+
+        <p class="text-xs text-gray-400 pt-2 border-t border-gray-100">Al marcar la casilla de aceptación en el formulario de contacto, el titular declara haber leído, comprendido y aceptado voluntariamente la presente Política de Tratamiento de Datos Personales de Hat Core.</p>
+
+      </div>
+
+      <!-- Footer del modal -->
+      <div class="px-8 py-5 border-t border-gray-100 shrink-0 flex justify-end">
+        <button onclick="document.getElementById('modal-habeas').classList.add('hidden'); document.getElementById('habeasdata').checked = true;"
+          class="btn-p px-10 py-3 text-sm">
+          <i class="fas fa-check" aria-hidden="true"></i>
+          Acepto la política
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
        WHATSAPP WIDGET
   ══════════════════════════════════════ -->
   <a href="https://wa.me/573124666601?text=Hola%20Hat%20Core%2C%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20SST."
