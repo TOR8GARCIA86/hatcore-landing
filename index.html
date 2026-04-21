@@ -641,26 +641,20 @@
     <section id="proposito" aria-labelledby="proposito-heading">
       <div class="feat-section">
 
-        <!-- Columna sticky con imágenes intercambiables (solo desktop) -->
+        <!-- Columna sticky — slideshow automático de sectores (solo desktop) -->
         <div class="feat-sticky w-1/2" style="width:50%;" aria-hidden="true">
-          <!-- Imagen 1: Propósito -->
-          <img id="img-proposito" class="feat-img active"
-            src="images/proposito.jpg"
-            data-fallback="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=85"
-            alt="Consultoría SST Hat Core — Equipo implementando cultura preventiva y gestión de riesgos"
-            data-feat="0" loading="lazy" />
-          <!-- Imagen 2: Visión -->
-          <img id="img-vision" class="feat-img inactive"
-            src="images/vision.jpg"
-            data-fallback="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1400&q=85"
-            alt="Hat Core — Visión de Seguridad y Salud en el Trabajo como experiencia consciente en Colombia"
-            data-feat="1" loading="lazy" />
-          <!-- Imagen 3: Diferenciador -->
-          <img id="img-diferencia" class="feat-img inactive"
-            src="images/diferencia.jpg"
-            data-fallback="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=85"
-            alt="Hat Core — Seguridad, comportamiento humano y creatividad aplicados a la SST"
-            data-feat="2" loading="lazy" />
+          <img class="feat-slide" style="animation-delay:0s"
+            src="images/sector-construccion.jpg"
+            alt="SST en Construcción — Hat Core Colombia" />
+          <img class="feat-slide" style="animation-delay:4s"
+            src="images/sector-industria.jpg"
+            alt="SST en Industria — Hat Core Colombia" />
+          <img class="feat-slide" style="animation-delay:8s"
+            src="images/sector-laboratorios.jpg"
+            alt="SST en Laboratorios — Hat Core Colombia" />
+          <img class="feat-slide" style="animation-delay:12s"
+            src="images/sector-callcenter.jpg"
+            alt="SST en Call Center — Hat Core Colombia" />
           <div class="feat-img-overlay"></div>
         </div>
 
